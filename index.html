@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HOW TO MAKE A BURGER</title>
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #fff7df;
+      color: #43251a;
+      font-family: Arial, sans-serif;
+    }
+
+    header{
+      width: 1440px;
+      height: 65px;
+      padding: 10px 30px;
+      border-bottom: 4px solid #43251a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      background: #ed632e;
+      color: white;
+    }
+
+    header h2{
+      font-size: 24px;
+      margin: 0;
+    }
+
+    header a{
+      font-size: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #43251a;
+    }
+
+
+    h1{
+      font-size: 75px;
+      line-height: 0.95;
+      margin: 20px 0;
+    }
+
+    h2{
+      font-size: 32px;
+    }
+
+    p{
+      line-height: 1.6;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 20px;
+      height: 835px;
+      width: 1440px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .intro p{
+      font-size: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #ed632e;
+      color: white;
+      padding: 15px;
+      border-radius: 20px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .button:hover{
+      background: #43251a;
+    }
+
+    h1 {
+      font-size: 70px;
+      margin: 0;
+      animation: pop 0.8s ease-out;
+    }
+
+    .burger-page {
+      display: none;
+      width: 550px;
+      height: 400px;
+      margin: 20px 15px;
+      position: relative;
+      vertical-align: top;
+      background: #ffe9b8;
+      border: 3px solid #43251a;
+      border-radius: 25px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+.ingredient {
+  position: absolute;
+  width: 320px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -300px;
+}
+
+
+.drop {
+  animation: dropDown 0.7s ease-out forwards;
+}
+#lettuce.drop {
+  animation: dropLettuce 0.7s ease-out forwards;
+}
+
+@keyframes dropLettuce {
+  from {
+    top: -300px;
+  }
+
+  to {
+    top: 60%;
+  }
+}
+@keyframes dropDown {
+  from {
+    top: -300px;
+  }
+
+  to {
+    top: 65%;
+  }
+}
+    @keyframes pop {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      70% {
+        transform: scale(1.15);
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    #patty.drop {
+  animation: dropPatty 0.7s ease-out forwards;
+}
+
+@keyframes dropPatty {
+  from {
+    top: -300px;
+  }
+
+  to {
+    top: 55%;
+  }
+}
+
+.instructions{
+  display: inline-block;
+  vertical-align: top;
+  width: 350px;
+  margin: 20px 10px;
+  padding: 15px;
+  background: #ffe9b8;
+  border-radius: 25px;
+}
+
+.instructions h2{
+  color: #ed632e;
+}
+
+.recipe-layout{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin: 30px auto;
+}
+
+
+
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <h2 style="color: white;">HOW TO MAKE A BURGER</h2>
+  </header>
+
+  <section class="intro">
+    <h1>HOW TO MAKE A BURGER</h1>
+    <p>Eight ingredients. One perfect burger.</p>
+    <a href="#recipe" class="button">LET'S START!</a>
+  </section>
+
+<div class="recipe-layout">
+  <section class="burger-page" id="recipe">
+  <img src="222.png" class="ingredient" id="bottom-bun">
+  <img src="555.png" class="ingredient" id="lettuce">
+  <img src="333.png" class="ingredient" id="patty">
+  <img src="444.png" class="ingredient" id="cheese">
+  <img src="666.png" class="ingredient" id="tomato">
+  <img src="888.png" class="ingredient" id="onion">
+  <img src="777.png" class="ingredient" id="egg">
+  <img src="111.png" class="ingredient" id="top-bun">
+</section>
+
+<div class="instructions">
+  <h2>THE RECIPE</h2>
+  <p>Click the burger area three times first!</p>
+
+  <p>01. Bottom Bun</p>
+  <p>02. Lettuce</p>
+  <p>03. Patty</p>
+  <p>04. Cheese</p>
+  <p>05. Tomato</p>
+  <p>06. Onion</p>
+  <p>07. Egg</p>
+  <p>08. Top Bun</p>
+
+  </div>
+</div>
+
+  
+  
+  
+  
+  
+  
+
+  <script>
+    const intro = document.querySelector(".intro");
+    const burgerPage = document.querySelector(".burger-page");
+
+    intro.addEventListener("click", function () {
+      intro.style.display = "none";
+      burgerPage.style.display = "block";
+    });
+    let step = 0;
+
+burgerPage.addEventListener("click", function () {
+
+  if (step === 0) {
+    document.getElementById("bottom-bun").classList.add("drop");
+  }
+
+  if (step === 1) {
+    document.getElementById("lettuce").classList.add("drop");
+  }
+  if (step === 2) {
+  document.getElementById("patty").classList.add("drop");
+}
+if (step === 2) {
+  document.getElementById("patty").classList.add("drop");
+}
+
+step++;
+});
+</script>
+
+</body>
+</html>
